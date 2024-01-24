@@ -240,9 +240,15 @@ display: none;
 }
 
 
-article{
+article {
     display: none;
-}
+    overflow: hidden;
+  }
+  
+  .showAnswer {
+    display: block;
+    transition: 1s ease-in-out;
+  }
 
 
 .FAQSection{
@@ -250,7 +256,7 @@ article{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px;
+    padding: 100px 0;
     color:rgb(244, 244, 244);
 }
 
