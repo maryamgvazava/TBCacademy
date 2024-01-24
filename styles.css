@@ -1,3 +1,11 @@
+*{
+    font-family: wf_dd28b3957391427eb54de1c9e;
+}
+
+
+
+
+
 nav, .navigationBar, .menu, .academyName{
     display: flex;
     /* width: 100%; */
@@ -44,6 +52,18 @@ ul{
     /* object-position: 50% 50%; */
     width: 100%;
     
+}
+
+
+.mainHeadlines:first-child{
+    font-size: 42px;
+    /* font-family:wf_f52303b2efea42e1b4aeed119;
+    font-weight:bolder */
+}
+
+.mainHeadlines:last-child{
+    font-size: 34px;
+    /* font-family:wf_f52303b2efea42e1b4aeed119 */
 }
 
 
@@ -146,14 +166,29 @@ ul{
 .projectPartners, .projectPartnersSlider{
     background-color: rgba(43, 43, 43, 43);
     width: 100%;
-    height: 363px;
+
     box-sizing: border-box;
+}
+
+.projectPartners{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 36px;
 }
 
 .arrow{
     /* opacity:6%; */
     width: 18px;
+    margin: 0 100px;
+    height: 38px;
+    fill : rgb(244, 244, 244)
+  
 }
+
+
+
+
 
 .rightArrow{
     transform: rotate(180deg);
@@ -170,31 +205,37 @@ display: none;
     width: 980px;
     display: flex;
     justify-content: space-between;
+    align-items:center;
 }
 
-.partnerImg{
-    width: 248px; 
-    height: 71px; 
-    /* object-fit: cover; 
-    object-position: 50% 50% */
-}
+
 
 
 .projectPartnersSlider{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 40px 0 10px;
 }
 
+.projectPartnersHeader{
+    color: rgb(244, 244, 244);
+    font-size: 24px;
+    width: 980px;
+    margin: 34px 0 31px;
+}
 
-
+.slideDots{
+    margin: 10px 0 50px;
+}
 
 
 
 
 .FAQ{
     width: 980px;
-    
+    padding: 30px 40px;
+    box-sizing: border-box;
     
 }
 
@@ -216,5 +257,173 @@ article{
 .questions{
     font-size:18px;
     padding: 15px 0;
-    box-shadow: 0 4px 6px -6px rgba(85, 85, 85, 1);
+    margin: 0;
+    /* box-shadow: 0 4px 6px -6px rgba(85, 85, 85, 1); */
 }
+
+.tbcUSAIDinfo{
+    font-size: 28px;
+    
+}
+
+.SelectionMethod, .multipleCourses, .price{
+    padding: 1px 0;
+    position: relative;
+ 
+}
+.FAQHeader:first-child{
+    font-size: 24px;
+}
+
+.allQuestions{
+    font-size: 20px;
+    color: rgb(0, 174, 243) ;
+}
+
+
+.FAQHeader{
+    display: flex;
+    justify-content:space-between;
+    width: 980px;
+    padding: 30px 40px;
+}
+
+
+.SelectionMethod svg{
+    fill : rgb(244, 244, 244);
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.multipleCourses svg{
+    fill : rgb(244, 244, 244);
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.price svg{
+    fill : rgb(244, 244, 244);
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color:rgba(43, 43, 43, 43);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+.footerContainer{
+    width: 980px;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(244, 244, 244);
+}
+
+.termsAndConditions{
+    font-size: 14px;
+    margin: 64px 0 43px;
+}
+
+.logos{
+    margin: 64px 0 18px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fb{
+    margin-right:10px ;
+}
+
+.terms{
+    margin: 15px 0 0;
+}
+.tbclogo{
+    margin: 3px 0 27px;
+}
+.allRights{
+    margin-bottom: 3px;
+}
+.allRights{
+    margin-bottom: 3px;
+}
+
+.contactBtn{
+    margin-bottom: 43px;
+    font-size: 16px;
+    height: 39px;
+    width: 162px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(0, 174, 243);
+    color: rgb(244, 244, 244);;
+}
+
+
+.writeUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@font-face {
+    font-display: block;
+    font-family: wf_dd28b3957391427eb54de1c9e;
+    src: url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2") format("woff2"),
+         url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff/file.woff") format("woff"),
+         url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/ttf/file.ttf") format("ttf");
+  }
+
+
+  @font-face {
+    font-display: block;
+    font-family: wf_f52303b2efea42e1b4aeed119;
+    src: url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/woff2/file.woff2") format("woff2"),
+    url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/woff/file.woff") format("woff"),
+    url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/ttf/file.ttf") format("ttf");
+    }
+
+
+    @font-face {
+        font-display: block;
+        font-family: wf_dd28b3957391427eb54de1c9e;
+        src: url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2") format("woff2"),
+        url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff/file.woff") format("woff"),
+        url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/ttf/file.ttf") format("ttf");
+        }
+
+
+        @font-face {
+        font-display: block;
+        font-family: wf_7737b5e7be24426aa35c9f431;
+        src: url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/woff2/file.woff2") format("woff2"),
+        url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/woff/file.woff") format("woff"),
+        url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/ttf/file.ttf") format("ttf");
+        }
+
+
+        @font-face {
+        font-display: block;
+        font-family: wf_93c16d86ec9d47d0a2a36894f;
+        src: url("https://static.wixstatic.com/ufonts/643d94_93c16d86ec9d47d0a2a36894fbdd54fd/woff2/file.woff2") format("woff2"),
+        url("https://static.wixstatic.com/ufonts/643d94_93c16d86ec9d47d0a2a36894fbdd54fd/woff/file.woff") format("woff"),
+        url("https://static.wixstatic.com/ufonts/643d94_93c16d86ec9d47d0a2a36894fbdd54fd/ttf/file.ttf") format("ttf");
+        }
+        
+  
