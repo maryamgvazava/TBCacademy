@@ -157,7 +157,15 @@ ul{
     color: rgb(219, 219, 219);
 }
 
-
+article {
+    display: none;
+    overflow: hidden;
+  }
+  
+  .showAnswer {
+    display: block;
+    transition: 1s ease-in-out;
+  }
 
 
 
