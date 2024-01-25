@@ -1,5 +1,10 @@
 *{
     font-family: wf_dd28b3957391427eb54de1c9e;
+
+}
+
+body{
+    margin:0px;
 }
 
 
@@ -8,24 +13,25 @@
 
 nav, .navigationBar, .menu, .academyName{
     display: flex;
-    /* width: 100%; */
     justify-content:center;
     background-color: rgb(26, 30, 31);
     color: #fff;
 }
 
-li{
+.navbarLists{
     list-style-type: none;
     padding: 0 15px;
     color: #fff;
 
 }
-ul{
+.navbarComponents{
     display: flex;
 }
-/* .academyName{
-    margin: 0 0px 10px calc((100% - 980px) * 0.5);
-} */
+
+
+
+
+
 .navigationBar{
     width: 980px;
     display: flex;
@@ -33,10 +39,7 @@ ul{
 }
 
 .grid-container{
-    display: grid;
-    /* justify-content:center; */
-   /* grid-row:auto; */
-    
+    display: grid;  
 }
 
 .courseInfoSectin{
@@ -49,7 +52,6 @@ ul{
 .HeadlinesSection{
     background-image: url(https://static.wixstatic.com/media/93e8a3_9fa23196ddf6427a9da574e2b31a13d2~mv2.jpg/v1/fill/w_1656,h_352,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/93e8a3_9fa23196ddf6427a9da574e2b31a13d2~mv2.jpg);
     color: #fff;
-    /* object-position: 50% 50%; */
     width: 100%;
     
 }
@@ -57,13 +59,10 @@ ul{
 
 .mainHeadlines:first-child{
     font-size: 42px;
-    /* font-family:wf_f52303b2efea42e1b4aeed119;
-    font-weight:bolder */
 }
 
 .mainHeadlines:last-child{
     font-size: 34px;
-    /* font-family:wf_f52303b2efea42e1b4aeed119 */
 }
 
 
@@ -128,9 +127,7 @@ ul{
 
 .courseCards{
     width: 300px;
-    /* height: 416px; */
     border-radius: 6px;
-    /* border: solid rgba(85, 85, 85, 1); */
     box-shadow: 0 0 0 1px rgba(85, 85, 85, 1);
 }
 
@@ -162,11 +159,11 @@ ul{
 
 
 
-
 .projectPartners, .projectPartnersSlider{
     background-color: rgba(43, 43, 43, 43);
     width: 100%;
-
+/* display: flex;
+flex-direction: column; */
     box-sizing: border-box;
 }
 
@@ -182,8 +179,8 @@ ul{
     width: 18px;
     margin: 0 100px;
     height: 38px;
-    fill : rgb(244, 244, 244)
-  
+    fill : rgb(244, 244, 244);
+    cursor: pointer;
 }
 
 
@@ -195,18 +192,87 @@ ul{
 }
 
 
-.slide2partnersInfo,
+/* .slide2partnersInfo,
 .slide3partnersInfo{
 display: none;
-}
+} */
 
+/* .partnerImg{
+    display: none;
+} */
 
-.slide1partnersInfo{
+.slide1partnersInfo, .slide2partnersInfo{
     width: 980px;
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
+    display: grid;
+    justify-items:center ;
+    align-items: center;
 }
+
+.slide2partnersInfo{
+    position: absolute;
+    left: 20%;
+    top: 20%;
+}
+
+
+.slideDots{
+    background-color: rgba(43, 43, 43, 43);;
+    margin: 10px 0 50px;
+    display: flex;
+}
+
+.HhjGmK{
+    color: rgb(244, 244, 244);
+    display: flex;
+}
+
+.dots{
+    margin: 6px;
+    cursor: pointer;
+}
+
+
+
+
+
+.fading-in {
+    opacity: 0;
+    animation: fade-in 1s ease-in forwards ;
+  }
+
+  .fading-out {
+    opacity: 1;
+    animation: fade-out 1s ease-in forwards ;
+  }
+  
+  @keyframes fade-in {
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+  @keyframes fade-out {
+    100% {
+      opacity: 0;
+    }
+  }
+  /* .w3-animate-fading.animation-paused {
+    animation-play-state: paused; 
+  } */
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -216,6 +282,7 @@ display: none;
     justify-content: space-between;
     align-items: center;
     margin: 40px 0 10px;
+    position: relative;
 }
 
 .projectPartnersHeader{
@@ -225,9 +292,7 @@ display: none;
     margin: 34px 0 31px;
 }
 
-.slideDots{
-    margin: 10px 0 50px;
-}
+
 
 
 
@@ -240,15 +305,40 @@ display: none;
 }
 
 
-article {
-    display: none;
+/* article {
     overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s ease;
+    line-height: 2;
+    font-size: 14px;
+    margin-bottom: 30px;
+  } */
+
+
+  article {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s ease;
+    line-height: 2;
+    font-size: 14px;
+    margin-bottom: 30px;
   }
-  
   .showAnswer {
-    display: block;
-    transition: 1s ease-in-out;
+    max-height: 1000px;  
+    transition: max-height 1s ease;  
   }
+
+  .questions{
+    font-size:18px;
+    padding: 15px 0;
+    margin: 0;
+    /* box-shadow: 0 4px 6px -6px rgba(85, 85, 85, 1); */
+}
+  
+.questions:hover{
+    cursor: pointer;
+}
+
 
 
 .FAQSection{
@@ -260,11 +350,23 @@ article {
     color:rgb(244, 244, 244);
 }
 
-.questions{
-    font-size:18px;
-    padding: 15px 0;
-    margin: 0;
-    /* box-shadow: 0 4px 6px -6px rgba(85, 85, 85, 1); */
+
+
+
+.courseHeader{
+    margin: 0 0 37px;
+    font-size: 14px;
+}
+
+.lvl{
+    padding-top: 2px;
+    padding-bottom: 3px;
+    line-height: 2;
+    margin: 0 0 0 21px;
+}
+
+.asterisc{
+    margin: 37px 0 0;
 }
 
 .tbcUSAIDinfo{
@@ -326,7 +428,7 @@ article {
 
 
 footer{
-    background-color:rgba(43, 43, 43, 43);
+    background-color: rgba(43, 43, 43, 43);
     width: 100%;
     display: flex;
     justify-content: center;
