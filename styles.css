@@ -84,6 +84,9 @@ nav, .navigationBar, .menu, .academyName{
     body{
         overflow-x: hidden;
     }
+    .projectPartnersHeader,
+    .slide1partnersInfo, 
+    .slide2partnersInfo,
    .GeneralInfoSection,
     .tbcUSAIDinfo,
     .mainHeadlines,
@@ -100,10 +103,28 @@ nav, .navigationBar, .menu, .academyName{
     .tbcUSAIDinfo{
         font-size: 20px !important;
     }
+    .slide1partnersInfo, 
+    .slide2partnersInfo{
+        display: flex;
+        flex-direction: column;
+        height: 230px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        
+    }
 
+    .projectPartnersSlider{
+        margin: 0;
+    }
+
+    .arrow{
+        display:none;
+    }
 
     .teachingCourses{
         grid-template-columns: 1fr !important;
+        justify-items: center;
 
     }
  }
@@ -332,6 +353,10 @@ display: none;
     100% {
       opacity: 0;
     }
+
+
+
+
   }
   /* .w3-animate-fading.animation-paused {
     animation-play-state: paused; 
