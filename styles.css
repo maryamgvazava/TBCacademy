@@ -85,6 +85,8 @@ nav, .navigationBar, .menu, .academyName{
         overflow-x: hidden;
     }
     .projectPartnersHeader,
+    .FAQHeader,
+    .FAQ,
     .slide1partnersInfo, 
     .slide2partnersInfo,
    .GeneralInfoSection,
@@ -127,6 +129,27 @@ nav, .navigationBar, .menu, .academyName{
         justify-items: center;
 
     }
+    .regAvailability{
+        margin-bottom: 25px !important;
+    }
+    .courseDetails{
+        margin: 0 22px 21px 22px !important;
+    }
+
+.FAQHeader{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 !important;
+    
+}
+.projectPartners{
+    margin: 0 !important;
+}
+
+.footerContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
  }
 
 /* @media (max-width: 480px) {
@@ -449,6 +472,7 @@ display: none;
     align-items: center;
     padding: 100px 0;
     color:rgb(244, 244, 244);
+    background-color: rgb(22, 22, 22);
 }
 
 
