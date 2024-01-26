@@ -1,86 +1,109 @@
+/* General styles */
+
 *{
     font-family: wf_dd28b3957391427eb54de1c9e;
-
+    color:  rgb(244, 244, 244);;
 }
-
 body{
     margin:0px;
 }
 
+:root {
+    --boldFont: wfont_643d94_f52303b2efea42e1b4aeed119e42672e, wf_f52303b2efea42e1b4aeed119, orig_tbc_x_black;
+  }
+/* first two sections */
 
-
-
-
-nav, .navigationBar, .menu, .academyName{
-    display: flex;
-    justify-content:center;
-    background-color: rgb(26, 30, 31);
-    color: #fff;
-}
-
-.navbarLists{
-    list-style-type: none;
-    padding: 0 15px;
-    color: #fff;
-
-}
-.navbarComponents{
-    display: flex;
-}
-
-
-
-
-
-.navigationBar{
-    width: 980px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.grid-container{
-    display: grid;  
-}
-
-.courseInfoSectin{
-    display: flex;
-    align-items: center;
-    background-color: rgb(22, 22, 22);
-    flex-direction: column;
-}
-
+/* section 1  -- main banner*/
 .HeadlinesSection{
     background-image: url(https://static.wixstatic.com/media/93e8a3_9fa23196ddf6427a9da574e2b31a13d2~mv2.jpg/v1/fill/w_1656,h_352,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/93e8a3_9fa23196ddf6427a9da574e2b31a13d2~mv2.jpg);
     color: #fff;
-    width: 100%;
     min-height: 352px;
-    
+    background-position: center;
+ 
 }
 
-
-.TBDusaid{
-    font-size: 42px;
-    font-family: wfont_643d94_f52303b2efea42e1b4aeed119e42672e,wf_f52303b2efea42e1b4aeed119,orig_tbc_x_black;
+/* section 2  -- general information banner*/
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
 }
-
-.techedu{
-    font-size: 36px;
-    font-family: wfont_643d94_f52303b2efea42e1b4aeed119e42672e,wf_f52303b2efea42e1b4aeed119,orig_tbc_x_black;
+.grid-container > section {
+    width: 100%;
     display: flex;
-    flex: 1/1/0;
-}
-
-.h3mainHeadlines{
-    line-height: 1.6em;
-    margin: 96px 0 10px;
+    justify-content: center;
+  }
+.grid-container> section:nth-child(even) {
+    background-color: rgb(43, 43, 43);
+  }
+.grid-container> section:nth-child(odd) {
+    background-color: rgb(22, 22, 22);
+  }
+  .mainHeadlines{
+    margin: 56px 0 43px;
     width: 980px;
+    font-size:28px;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    flex: 1/1/0;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+.blueText{
+    font-size: 20px;
+    color: rgb(0, 174, 243);
+    cursor: pointer;
+    font-family: var(--boldFont);
+}
+.blueText:hover{
+    color:  rgb(244, 244, 244);
+}
+    
+    .TBDusaid{
+        font-size: 42px;
+        font-family: var(--boldFont);
+        margin-bottom: 10px;
+    }
+    .techedu{
+        font-size: 36px;
+        font-family: var(--boldFont);
+        margin-top: 0;
+
+    }
+    
+
+
+@media screen and (max-width:425px){
+    .tbcUSAIDinfo{
+        font-size: 20px;
+    }
+    .TBDusaid, .techedu{
+        font-size: 30px;
+    }
 }
 
-@media (max-width: 768px) {
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+/* @media (max-width: 425px) {
+
+
     body{
         overflow-x: hidden;
     }
@@ -91,20 +114,34 @@ nav, .navigationBar, .menu, .academyName{
     .slide2partnersInfo,
    .GeneralInfoSection,
     .tbcUSAIDinfo,
-    .mainHeadlines,
+    
     .h3mainHeadlines,
     .teachingCourses, 
     .coursesHeaderDiv
     {
+        padding: 0 30px !important;
         width: 100vw !important;
+        box-sizing: border-box;
     }
 
-    .TBDusaid {
-        font-size: 36px;
-    }
+  
     .tbcUSAIDinfo{
-        font-size: 20px !important;
+        padding: 0 !important
+;
     }
+
+    .courseCards,
+    .courseImage{
+        width: 100% !important;
+        padding: 0;
+    }
+
+    .TBDusaid , .techedu{
+        font-size: 32px;
+        margin: 0;
+        line-height: 60px;
+    }
+
     .slide1partnersInfo, 
     .slide2partnersInfo{
         display: flex;
@@ -150,44 +187,50 @@ nav, .navigationBar, .menu, .academyName{
     display: flex;
     flex-wrap: wrap;
 }
- }
 
-/* @media (max-width: 480px) {
-    .TBDusaid {
-        font-size: calc(28px + 1vw);
-    }
-
-    .techedu {
-        font-size: calc(24px + 1vw);
-    }
-} */
-/* @media screen and (max-width: 769px){ */
-    /* .h3mainHeadlines{ */
-        /* line-height: 1.6em; */
-        /* margin: 48px 10px 10px; */
-        /* width: 100%;
-        flex-grow: 1/1/0 */
-        /* font-size: 10vmin */
-    /* }
-
-} */
-
-.mainHeadlines{
-    margin: 56px 0 43px;
-    width: 980px;
-    display: flex;
-flex: 1/1/0;
-}
-.GeneralInfoSection, 
-.HeadlinesSection{
+.h3mainHeadlines{
+    margin: 0;
     display: flex;
     justify-content: center;
+    }
+ } */
+
+
+
+ /* nav, .navigationBar, .menu, .academyName{
+    display: flex;
+    justify-content:center;
+    background-color: rgb(26, 30, 31);
+    color: #fff;
 }
 
-.GeneralInfoSection{
-    background-color: rgb(43, 43, 43);
+.navbarLists{
+    list-style-type: none;
+    padding: 0 15px;
     color: #fff;
+
+}
+.navbarComponents{
+    display: flex;
+}
+
+
+
+
+
+.navigationBar{
     width: 980px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.courseInfoSectin{
+    display: flex;
+    align-items: center;
+    background-color: rgb(22, 22, 22);
+    flex-direction: column;
 }
 
 .teachingCourses{
@@ -243,13 +286,7 @@ flex: 1/1/0;
     margin-left: 7px;
 }
 
-.box1{
-    width: 100%;
-    background-color: rgb(43, 43, 43);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+
 
 .regInfoofCourse{
     color: rgb(244, 244, 244);
@@ -270,8 +307,7 @@ flex: 1/1/0;
 .projectPartners, .projectPartnersSlider{
     background-color: rgba(43, 43, 43, 43);
     width: 100%;
-/* display: flex;
-flex-direction: column; */
+
     box-sizing: border-box;
 }
 
@@ -283,7 +319,7 @@ flex-direction: column; */
 }
 
 .arrow{
-    /* opacity:6%; */
+ 
     width: 18px;
     margin: 0 100px;
     height: 38px;
@@ -297,7 +333,7 @@ flex-direction: column; */
 
 .rightArrow{
     transform: rotate(180deg);
-}
+} */
 
 
 /* .slide2partnersInfo,
@@ -309,7 +345,7 @@ display: none;
     display: none;
 } */
 
-.column-1 {
+/* .column-1 {
     justify-content: flex-start;
   }
 
@@ -380,10 +416,8 @@ display: none;
 
 
 
-  }
-  /* .w3-animate-fading.animation-paused {
-    animation-play-state: paused; 
   } */
+ 
   
 
 
@@ -401,7 +435,7 @@ display: none;
 
 
 
-.projectPartnersSlider{
+/* .projectPartnersSlider{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -426,20 +460,13 @@ display: none;
     padding: 30px 40px;
     box-sizing: border-box;
     
-}
+} */
 
 
-/* article {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 1s ease;
-    line-height: 2;
-    font-size: 14px;
-    margin-bottom: 30px;
-  } */
 
 
-  article {
+
+  /* article {
     overflow: hidden;
     max-height: 0;
     transition: max-height 1s ease;
@@ -456,7 +483,7 @@ display: none;
     font-size:18px;
     padding: 15px 0;
     margin: 0;
-    /* box-shadow: 0 4px 6px -6px rgba(85, 85, 85, 1); */
+ 
 }
   
 .questions:hover{
@@ -494,12 +521,7 @@ display: none;
     margin: 37px 0 0;
 }
 
-.tbcUSAIDinfo{
-    font-size: 28px;
-    display: flex;
-    flex-wrap: wrap;
-    
-}
+
 
 .SelectionMethod, .multipleCourses, .price{
     padding: 1px 0;
@@ -543,7 +565,7 @@ display: none;
     position: absolute;
     right: 0;
     top: 25px;
-}
+} */
 
 
 
@@ -554,7 +576,7 @@ display: none;
 
 
 
-footer{
+/* footer{
     background-color: rgba(43, 43, 43, 43);
     width: 100%;
     display: flex;
@@ -615,7 +637,7 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} */
 
 @font-face {
     font-display: block;
