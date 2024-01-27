@@ -10,6 +10,10 @@ leftArrow = document.querySelector('.leftArrow')
 let partnerImg = document.querySelectorAll('.partnerImg');
  let slide1partnersInfo  = document.querySelector('.slide1partnersInfo');
  let slide2partnersInfo  = document.querySelector('.slide2partnersInfo');
+
+
+
+
  let arr = [
   {
     key0: 'https://static.wixstatic.com/media/93e8a3_a356bb7d201f4f47870683655e9e4120~mv2.png/v1/fill/w_308,h_93,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Asset%204_2x_edited.png width="246"  height="74"',
@@ -19,7 +23,7 @@ let partnerImg = document.querySelectorAll('.partnerImg');
   {
     key3: 'https://static.wixstatic.com/media/93e8a3_b595f31239344928802dd7135813e17c~mv2.png/v1/fill/w_310,h_89,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Tegeta%20logo%20geo.png width="248"  height="71"',
     key4: 'https://static.wixstatic.com/media/93e8a3_aca86c1c067d4f8585c3c2cb1b0a0178~mv2.png/v1/fill/w_234,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/93e8a3_aca86c1c067d4f8585c3c2cb1b0a0178~mv2.png width="87" height="45"',
-    key5: 'https://static.wixstatic.com/media/93e8a3_b6ed8fb2602e4670bc83d1fd4a7d9283~mv2.png/v1/fill/w_390,h_119,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/MicrosoftTeams-image%20(9).png width="315"  height="60"',
+    key5: 'https://static.wixstatic.com/media/93e8a3_b6ed8fb2602e4670bc83d1fd4a7d9283~mv2.png/v1/fill/w_390,h_119,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/MicrosoftTeams-image%20(9).png width="315"  height="95"',
   },
   {
     key6: 'https://static.wixstatic.com/media/93e8a3_ef7860c1a2854f1c8fc20f867ffa30ab~mv2.png/v1/fill/w_284,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/UFC%20GEO%20PNG_edited.png width="227"  height="64"',
@@ -75,10 +79,6 @@ dotsArr[0].addEventListener('click', function(){
   showImages(arr[0]); 
   showImages2(arr[2]); 
   stopFading()
-// if (showImages(arr[0])){
-//   !showImages2(arr[2]); 
-// }
-
 })
 
 dotsArr[1].addEventListener('click', function(){showImages(arr[1]); showImages2(arr[0]); stopFading()})
@@ -125,3 +125,21 @@ arrowDown.forEach(arrow => {
   
   });
 });
+
+
+const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+let changeParameters = function(url, width, height) {
+  return url.replace(/width="\d+"/, `width="${width}"`).replace(/height="\d+"/, `height="${height}"`);
+}
+
+if (windowWidth < 425) {
+  arr[0].key0 = changeParameters(arr[0].key0, 219, 66);
+  arr[0].key1 = changeParameters(arr[0].key1, 220, 67);
+  arr[0].key2 = changeParameters(arr[0].key2, 131, 45);
+  arr[1].key3 = changeParameters(arr[1].key3, 180, 52);
+  arr[1].key4 = changeParameters(arr[1].key4, 250, 45);
+  arr[1].key5 = changeParameters(arr[1].key5, 200, 66);
+  arr[2].key6 = changeParameters(arr[2].key6, 232, 65);
+}
+
