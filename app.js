@@ -1,18 +1,11 @@
 
-
-
-
-
-
-let arrowDown = document.querySelectorAll('.questions')
+let questions = document.querySelectorAll('.questionsDiv')
 let rightArrow  = document.querySelector('.rightArrow')
 leftArrow = document.querySelector('.leftArrow')
 let partnerImg = document.querySelectorAll('.partnerImg');
  let slide1partnersInfo  = document.querySelector('.slide1partnersInfo');
  let slide2partnersInfo  = document.querySelector('.slide2partnersInfo');
-
-
-
+ var navbarL = document.querySelector('.navXl');
 
  let arr = [
   {
@@ -30,6 +23,19 @@ let partnerImg = document.querySelectorAll('.partnerImg');
   }
 ];
 
+
+
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 0) {
+          navbarL.style.opacity = "0.8";
+          navbarL.style.transition = "all .3s ease";
+        } else {
+          navbarL.style.opacity = "1";
+          navbarL.style.transition = "all .3s ease";
+        }
+        
+      });
 
 // static positions
 let counter = 0;  
@@ -52,9 +58,6 @@ leftArrow.addEventListener('click', function () {
   showImages2(arr[counter-1]);
 
 });
-
-
-
 
 
 // auto slider
@@ -93,7 +96,6 @@ function showImages(obj) {
       slide1partnersInfo.innerHTML += img1; 
     }
     members++;
-    // slide1partnersInfo.style.gridTemplateColumns = `repeat(${members}, 1fr)`;
     members === 1 ? slide1partnersInfo.style.justifyContent = "center" : slide1partnersInfo.style.justifyContent = "space-between";
   }
 }
@@ -105,28 +107,14 @@ function showImages2(obj) {
     if (obj.hasOwnProperty(key)) {
       let img2 = `<img class="fading-out partnerImg" src="${obj[key]}" alt="">`;
       slide2partnersInfo.innerHTML += img2; 
-      console.log(obj[key])
     }
     members++;
-    // slide2partnersInfo.style.gridTemplateColumns = `repeat(${members}, 1fr)`;
     members === 1 ? slide2partnersInfo.style.justifyContent = "center" : slide2partnersInfo.style.justifyContent = "space-between";
       }
 }
 
 
-
-
-
-// toggle answers to the questions
-arrowDown.forEach(arrow => {
-  arrow.addEventListener("click", () => {
-    let nextSiblingElement = arrow.nextElementSibling;
-    nextSiblingElement.classList.toggle('showAnswer'); 
-  
-  });
-});
-
-
+// change image syses dynamically
 const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
 let changeParameters = function(url, width, height) {
@@ -143,3 +131,12 @@ if (windowWidth < 425) {
   arr[2].key6 = changeParameters(arr[2].key6, 232, 65);
 }
 
+
+
+// toggle answers to the questions
+questions.forEach(toggler => {
+  toggler.addEventListener("click", () => {
+    let nextSiblingElement = toggler.nextElementSibling;
+    nextSiblingElement.classList.toggle('showAnswer'); 
+  });
+});
