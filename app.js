@@ -1,15 +1,20 @@
+
+ let questions = document.querySelectorAll('.questionsDiv')
 let rightArrow  = document.querySelector('.rightArrow')
 leftArrow = document.querySelector('.leftArrow')
-let slide1partnersInfo  = document.querySelector('.slide1partnersInfo');
-let slide2partnersInfo  = document.querySelector('.slide2partnersInfo');
-var navbarL = document.querySelector('.navXl');
-let navMd = document.querySelector('.navMd')
+let partnerImg = document.querySelectorAll('.partnerImg');
+ let slide1partnersInfo  = document.querySelector('.slide1partnersInfo');
+ let slide2partnersInfo  = document.querySelector('.slide2partnersInfo');
+ var navbarL = document.querySelector('.navXl');
+ let navMd = document.querySelector('.navMd')
 let slideRightMenu = document.querySelector(".slideRightMenu")
 let togglTopmenuStick = document.querySelector(".togglTopmenuStick")
 let toggleMiddlemenuStick = document.querySelector(".toggleMiddlemenuStick")
 let toggleBottommenuStick = document.querySelector(".toggleBottommenuStick")
 let toggleMenuBtn = document.querySelector(".toggleMenuBtn")
 let togglMenu = document.querySelector(".togglMenu")
+
+
 
 
  let arr = [
@@ -27,12 +32,13 @@ let togglMenu = document.querySelector(".togglMenu")
     key6: 'https://static.wixstatic.com/media/93e8a3_ef7860c1a2854f1c8fc20f867ffa30ab~mv2.png/v1/fill/w_284,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/UFC%20GEO%20PNG_edited.png width="227"  height="64"',
   }
 ];
-
-// change image syses dynamically
+// change image sizes dynamically
 const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
 let changeParameters = function(url, width, height) {
   return url.replace(/width="\d+"/, `width="${width}"`).replace(/height="\d+"/, `height="${height}"`);
 }
+
 if (windowWidth < 425) {
   arr[0].key0 = changeParameters(arr[0].key0, 200, 66);
   arr[0].key1 = changeParameters(arr[0].key1, 200, 67);
@@ -60,13 +66,14 @@ if (windowWidth < 425) {
 
       });
 
-// starting positions
+// static positions
 let counter = 0;  
 showImages(arr[counter]);
 showImages2(arr[counter + 1]); 
 
 
 // right / left arrow clicks
+
 rightArrow.addEventListener('click', function () {
   stopFading()
   counter = (counter + 1) % arr.length;
@@ -78,10 +85,12 @@ leftArrow.addEventListener('click', function () {
   counter = (counter - 1 + arr.length) % arr.length;
   showImages(arr[counter]);
   showImages2(arr[counter-1]);
+
 });
 
 
 // auto slider
+
 function fadeImages() {
   counter = (counter + 1) % arr.length;
   showImages(arr[counter]);
@@ -109,7 +118,7 @@ dotsArr[2].addEventListener('click', function(){showImages(arr[2]); showImages2(
 
 
 
-// defining sliders functions
+// creating functions for moving slide
 function showImages(obj) {
   let members = 0;
   slide1partnersInfo.innerHTML = '';
@@ -135,6 +144,10 @@ function showImages2(obj) {
     members === 1 ? slide2partnersInfo.style.justifyContent = "center" : slide2partnersInfo.style.justifyContent = "space-between";
       }
 }
+
+
+
+
 
 
 // toggle answers to the questions
