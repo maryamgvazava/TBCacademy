@@ -39,7 +39,7 @@ let changeParameters = function(url, width, height) {
   return url.replace(/width="\d+"/, `width="${width}"`).replace(/height="\d+"/, `height="${height}"`);
 }
 
-if (windowWidth < 425) {
+if (windowWidth < 980) {
   arr[0].key0 = changeParameters(arr[0].key0, 200, 66);
   arr[0].key1 = changeParameters(arr[0].key1, 200, 67);
   arr[0].key2 = changeParameters(arr[0].key2, 131, 45);
