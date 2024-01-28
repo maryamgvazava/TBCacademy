@@ -538,7 +538,10 @@ footer{
 
 @media (max-width: 980px){
     .mediumWidth{
-      width: 100%;
+      max-width: 100%;
+    }
+       .arrow{
+        display: none
     }
 }
 
@@ -649,9 +652,7 @@ footer{
         font-stretch: 100%;
     }
 
-    .arrow{
-        display: none
-    }
+ 
     .sliderSection{
         height: 371px;
     }
