@@ -1,24 +1,15 @@
-
-let questions = document.querySelectorAll('.questionsDiv')
 let rightArrow  = document.querySelector('.rightArrow')
 leftArrow = document.querySelector('.leftArrow')
-let partnerImg = document.querySelectorAll('.partnerImg');
- let slide1partnersInfo  = document.querySelector('.slide1partnersInfo');
- let slide2partnersInfo  = document.querySelector('.slide2partnersInfo');
- var navbarL = document.querySelector('.navXl');
- let navMd = document.querySelector('.navMd')
+let slide1partnersInfo  = document.querySelector('.slide1partnersInfo');
+let slide2partnersInfo  = document.querySelector('.slide2partnersInfo');
+var navbarL = document.querySelector('.navXl');
+let navMd = document.querySelector('.navMd')
 let slideRightMenu = document.querySelector(".slideRightMenu")
 let togglTopmenuStick = document.querySelector(".togglTopmenuStick")
 let toggleMiddlemenuStick = document.querySelector(".toggleMiddlemenuStick")
 let toggleBottommenuStick = document.querySelector(".toggleBottommenuStick")
 let toggleMenuBtn = document.querySelector(".toggleMenuBtn")
 let togglMenu = document.querySelector(".togglMenu")
-
-
-
-
-
-
 
 
  let arr = [
@@ -37,9 +28,23 @@ let togglMenu = document.querySelector(".togglMenu")
   }
 ];
 
+// change image syses dynamically
+const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+let changeParameters = function(url, width, height) {
+  return url.replace(/width="\d+"/, `width="${width}"`).replace(/height="\d+"/, `height="${height}"`);
+}
+if (windowWidth < 425) {
+  arr[0].key0 = changeParameters(arr[0].key0, 200, 66);
+  arr[0].key1 = changeParameters(arr[0].key1, 200, 67);
+  arr[0].key2 = changeParameters(arr[0].key2, 131, 45);
+  arr[1].key3 = changeParameters(arr[1].key3, 180, 52);
+  arr[1].key4 = changeParameters(arr[1].key4, 200, 45);
+  arr[1].key5 = changeParameters(arr[1].key5, 200, 66);
+  arr[2].key6 = changeParameters(arr[2].key6, 200, 65);
+}
 
 
-
+// slowly disappear navbar when scrolling down
       window.addEventListener('scroll', function () {
         if (window.scrollY > 0) {
           navbarL.style.opacity = "0.8";
@@ -55,14 +60,13 @@ let togglMenu = document.querySelector(".togglMenu")
 
       });
 
-// static positions
+// starting positions
 let counter = 0;  
 showImages(arr[counter]);
 showImages2(arr[counter + 1]); 
 
 
 // right / left arrow clicks
-
 rightArrow.addEventListener('click', function () {
   stopFading()
   counter = (counter + 1) % arr.length;
@@ -74,12 +78,10 @@ leftArrow.addEventListener('click', function () {
   counter = (counter - 1 + arr.length) % arr.length;
   showImages(arr[counter]);
   showImages2(arr[counter-1]);
-
 });
 
 
 // auto slider
-
 function fadeImages() {
   counter = (counter + 1) % arr.length;
   showImages(arr[counter]);
@@ -105,6 +107,9 @@ dotsArr[0].addEventListener('click', function(){
 dotsArr[1].addEventListener('click', function(){showImages(arr[1]); showImages2(arr[0]); stopFading()})
 dotsArr[2].addEventListener('click', function(){showImages(arr[2]); showImages2(arr[1]); stopFading()})
 
+
+
+// defining sliders functions
 function showImages(obj) {
   let members = 0;
   slide1partnersInfo.innerHTML = '';
@@ -132,25 +137,6 @@ function showImages2(obj) {
 }
 
 
-// change image syses dynamically
-const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-let changeParameters = function(url, width, height) {
-  return url.replace(/width="\d+"/, `width="${width}"`).replace(/height="\d+"/, `height="${height}"`);
-}
-
-if (windowWidth < 425) {
-  arr[0].key0 = changeParameters(arr[0].key0, 200, 66);
-  arr[0].key1 = changeParameters(arr[0].key1, 200, 67);
-  arr[0].key2 = changeParameters(arr[0].key2, 131, 45);
-  arr[1].key3 = changeParameters(arr[1].key3, 180, 52);
-  arr[1].key4 = changeParameters(arr[1].key4, 200, 45);
-  arr[1].key5 = changeParameters(arr[1].key5, 200, 66);
-  arr[2].key6 = changeParameters(arr[2].key6, 200, 65);
-}
-
-
-
 // toggle answers to the questions
 questions.forEach(toggler => {
   toggler.addEventListener("click", () => {
@@ -160,17 +146,23 @@ questions.forEach(toggler => {
 });
 
 
-
+// animating togglable navbar-s icon and -disabling- scrolling while menu bar is open
 slideRightMenu.addEventListener("click", function() {
   togglMenu.classList.remove('show')
   togglTopmenuStick.classList.remove("rotateStick");
   toggleBottommenuStick.classList.remove("rotateStick");
-  toggleMiddlemenuStick.classList.remove("rotateCentralStick");
-});
+  toggleMiddlemenuStick.classList.remove("rotateCentralStick")
+  document.body.style.overflow = "auto";
+  document.documentElement.style.overflow = "auto";
 
+});
+// animating togglable navbar-s icon and -enabling- scrolling while menu bar is closed
 toggleMenuBtn.addEventListener("click", function() {
   togglTopmenuStick.classList.add("rotateStick");
   toggleBottommenuStick.classList.add("rotateStick");
   toggleMiddlemenuStick.classList.add("rotateCentralStick");
   togglMenu.classList.add('show')
+  document.body.style.overflow = "hidden";
+  document.documentElement.style.overflow = "hidden";
+
 });

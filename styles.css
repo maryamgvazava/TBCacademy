@@ -15,12 +15,14 @@ body{
     --boldFont: wfont_643d94_f52303b2efea42e1b4aeed119e42672e, wf_f52303b2efea42e1b4aeed119, orig_tbc_x_black;
   } 
 
+
+  /* head menu section */
+
 .navbarSection{
     padding: 10px;
     background-color: rgb(26,30,31);
     width: 100% !important;
     box-sizing: border-box;
-
 }
 
   .navXl{
@@ -32,15 +34,13 @@ body{
     background-color: rgb(26, 30, 31);
     display: flex;
     justify-content: center;
- 
 }
+
 .navMd{
     display: none;
     width: 100% !important;
     height: auto;
    }
-
-
 
 .toggleMenuBtn, 
 .slideRightMenu{
@@ -77,14 +77,11 @@ body{
    align-self: flex-end;
 }
 
-
-
 .rotateStick{
     transition: transform 1.2s ease-out;
     transform: rotate(-125deg);
     margin: 3px;
-    background-color: rgb(118, 118, 118);
-    
+    background-color: rgb(118, 118, 118);  
 }
 
 .rotateCentralStick{
@@ -93,7 +90,8 @@ body{
     background-color: rgb(118, 118, 118);
 }
 
-.academyName, .menu{
+.academyName, 
+.menu{
     margin: 22px 0;
 }
 
@@ -101,7 +99,6 @@ body{
     list-style-type: none;
     padding: 0 15px;
     color: #fff;
-
 }
 .navbarComponents{
     display: flex;
@@ -113,12 +110,11 @@ body{
     justify-content: space-between; 
 }
 
-
 .TBC-USID{
     color: rgb(0, 174, 243);
 }
 
-/* first two sections */
+/* TBC x USAID info sections */
 
 /* section 1  -- main banner*/
 
@@ -127,8 +123,6 @@ body{
     color: #fff;
     min-height: 352px;
     background-position: center;
-    /* margin-top: 80px; */
- 
 }
 
 /* section 2  -- general information banner*/
@@ -137,18 +131,19 @@ body{
     grid-template-columns: 1fr;
 }
 .grid-container section {
-    /* width: 100%; */
     display: flex;
     justify-content: center;
     padding: 0 20px; 
     box-sizing: border-box !important;
   }
+
 .grid-container> section:nth-child(even) {
     background-color: rgb(43, 43, 43);
   }
 .grid-container> section:nth-child(odd) {
     background-color: rgb(22, 22, 22);
   }
+
   .mainHeadlines{
     margin: 56px 0 43px;
     font-size:28px;
@@ -157,17 +152,16 @@ body{
     justify-content: center;
     }
  
-
 .blueText{
     font-size: 20px;
     color: rgb(0, 174, 243);
     cursor: pointer;
     font-family: var(--boldFont);
 }
+
 .blueText:hover{
     color:  rgb(244, 244, 244);
 }
-    
     .TBDusaidText{
         font-size: 42px;
         font-family: var(--boldFont);
@@ -183,11 +177,6 @@ body{
         font-size: 28px;
         margin-bottom: 36px;
     }
-
-   
-
-
-
 
 
 /* cards about courses */
@@ -225,7 +214,6 @@ body{
     margin-bottom: 25px
 }
 
-
 .courseDetails{
     margin: 70px 22px 21px 22px;
     display: flex;
@@ -235,14 +223,15 @@ body{
 .seeDetails{
     margin-left: 7px;
     color: rgb(0, 174, 239);
-    font-family: wfont_643d94_93c16d86ec9d47d0a2a36894fbdd54fd, wf_93c16d86ec9d47d0a2a36894f, orig_tbc_x_medium;
+    font-family: wf_dd28b3957391427eb54de1c9e, orig_tbc_x_medium
 }
 .courseCards{
     width: 300px;
     border-radius: 6px;
     box-shadow: 0 0 0 1px rgba(85, 85, 85, 1);
-}
+    margin: 12.5px 0;
 
+}
 .courseImage{
     margin-bottom: 34px;
     width: 100%;
@@ -252,6 +241,10 @@ body{
 
 
 
+
+
+
+/* project partner's info and slider */
 .sliderSection{
     width: 100%;
     margin-bottom: 36px;
@@ -262,13 +255,11 @@ body{
    box-sizing: border-box !important;
 }
 
-
 .projectPartners{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
 }
 
 .projectPartnersHeader{
@@ -281,6 +272,8 @@ body{
     display: flex;
     justify-content: space-between;
     position: relative;
+    min-height: 95px;
+    align-items: center;
 }
 
 .slide1partnersInfo, 
@@ -294,7 +287,6 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
 }
 .arrow{
     width: 18px;
@@ -306,7 +298,6 @@ body{
 .rightArrow{
     transform: rotate(180deg);
 }
-
 .listDots{
    
     display: flex;
@@ -315,34 +306,40 @@ body{
 .slideDots{
     margin: 14px 0 50px;
 }
-
 .dots{
     margin:0 6px;
     width: 6px;
     height: 6px;
     cursor: pointer;
+    list-style-type: none;
 }
 .fading-in {
     opacity: 0;
-    animation: fade-in 1.5s ease-in forwards ;
+    animation: fade-in 1.5s ease-in-out forwards;
   }
-
+  
   .fading-out {
     opacity: 1;
-    animation: fade-out 1.5s ease-in forwards ;
+    animation: fade-out 1.5s ease-in-out forwards;
   }
   
   @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
     100% {
       opacity: 1;
     }
   }
+  
   @keyframes fade-out {
-    
+    0% {
+      opacity: 0.7;
+    }
     100% {
       opacity: 0;
     }
-}
+  }
 
 /* frequently asked questions section */
 
@@ -396,8 +393,6 @@ body{
     cursor: pointer;
 }
 
-
-
 .FAQSection{
     width: 100%;
     display: flex;
@@ -407,12 +402,6 @@ body{
     color:rgb(244, 244, 244);
     background-color: rgb(22, 22, 22);
 }
-
-
-
-
-
-
 .lvl{
     padding-top: 2px;
     padding-bottom: 3px;
@@ -424,13 +413,11 @@ body{
     margin: 37px 0 0;
 }
 
-
-
 .SelectionMethod, .multipleCourses, .price{
     padding: 1px 0;
     position: relative;
- 
 }
+
 .FAQHeader:first-child{
     font-size: 24px;
 }
@@ -446,13 +433,11 @@ body{
     color: rgb(0, 174, 243) ;
 }
 
-
 .FAQHeader{
     display: flex;
     justify-content:space-between;
     padding: 30px 40px;
 }
-
 
 .SelectionMethod svg{
     fill : rgb(244, 244, 244);
@@ -485,7 +470,6 @@ footer{
     justify-content: center;
 }
 
-
 .footerContainer{
     display: grid;
     grid-template-areas:
@@ -499,11 +483,11 @@ footer{
     font-size: 14px;
     grid-area: tAndConditions;
     margin-bottom: 27px;
-
 }
 .contactBtnDiv{
     justify-self: end;
 }
+
 .logos{
     display: flex;
     justify-content: flex-end;
@@ -532,8 +516,6 @@ footer{
     margin-bottom: 3px;
     grid-area: allRights;
 }
-
-
 .contactBtn{
     font-size: 16px;
     height: 39px;
@@ -546,17 +528,16 @@ footer{
     grid-area: contactBtn;
 }
 
-
 .togglMenu{
     display: none;
 }
 
-.mediurmWidth{
+.mediumWidth{
   width: 980px;
 }
 
 @media (max-width: 980px){
-    mediurmWidth{
+    .mediumWidth{
       width: 100%;
     }
 }
@@ -564,14 +545,18 @@ footer{
 
 
 @media (max-width: 768px){
+    /* general styling */
+    section div {
+        width: 100% !important;
+    }
 
+    /* navigation Section */
     nav{
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-
 
     .togglMenu{
         position: absolute;
@@ -585,15 +570,12 @@ footer{
         transition: right 1s ease-in-out;     
         position: fixed;  
         top: 0;
-        /* display: none; */
     }
-
     .show{
         right: 0;
         display: flex;
         transition: right 1s ease-in-out;  
     }
-
     .navigationBar{
         width: 100%;
     }
@@ -617,121 +599,109 @@ footer{
     .slideRightMenu{
         margin: 0 10 22px 10px 
     }
+    .navXl{
+        display: none;
+    }
+    .navMd{
+        display: block;
+    }
+
+    .HeadlinesSection{
+        margin-top: 0;
+    }
 
 
-.navXl{
+ /* tbc x USAID info section */
+    .tbcUSAIDinfo{
+        font-size: 20px;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+    .TBDusaidText, 
+    .techeduText{
+        font-size: 25px;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    /* info about courses */
+    .courseHeader{
+        font-size: 15px;
+    }
+    .aboutCourses{
+        grid-template-columns: 1fr !important;
+    }
+    .courseDetails{
+        margin: 0 22px 21px 20px !important;
+    }
+
+
+    /* slider and partner info section */
+    .slide1partnersInfo, 
+    .slide2partnersInfo{
+        flex-direction: column;
+        height: 327px;
+        justify-self: space-around;
+        padding: 64px 0 41px;
+    }
+    .projectPartnersHeaderP{
+        font-size: 18px;
+        font-stretch: 100%;
+    }
+
+    .arrow{
+        display: none
+    }
+    .sliderSection{
+        height: 371px;
+    }
+
+    .slideDots{
+        margin: 14px 0 24px;
+    }
+
+
+    /* FAQ section */
+
+    .allQuestionsTop{
     display: none;
-}
-.navMd{
-    display: block;
-}
+    }
+    .allQuestionsBottom{
+        display: block;
+        margin: 50px 0;
+    }
+    .allQuestionsBottom{
+        display: block;
+        font: 16px;
+        font-family: var(--boldFont)
+    }
 
-.HeadlinesSection{
-    margin-top: 0;
-}
+    .FAQSection{
+        margin-top: 50px;
+        padding: 0;
+    }
+    .FAQHeader{
+        font-size: 20px !important;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .questionsDiv{
+        height: auto;
+    }
+    .FAQ{
+        padding: 0;
+    }
+    .answers{
+        margin: 0;
+    }
+    .questionsDiv::before {
+        height: 0; 
+    }
+    .questions{
+        font-size: 16px;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-section div {
-    width: 100% !important;
-}
-
-.tbcUSAIDinfo{
-    font-size: 20px;
-    max-width: 100%;
-    word-wrap: break-word;
-}
-.TBDusaidText, .techeduText{
-    font-size: 25px;
-    max-width: 100%;
-    word-wrap: break-word;
-}
-.courseHeader{
-    font-size: 15px;
-}
-.aboutCourses{
-    grid-template-columns: 1fr !important;
-}
-.courseDetails{
-    margin: 0 22px 21px 20px !important;
-}
-
-.slide1partnersInfo, 
-.slide2partnersInfo{
-    flex-direction: column;
-    height: 327px;
-    justify-self: space-around;
-    padding: 64px 0 41px;
-}
-.projectPartnersHeaderP{
-    font-size: 18px;
-    font-stretch: 100%;
-}
-
-.arrow{
-    display: none
-}
-/* .partnerImg{
-    max-width:60vmin;
-} */
-
-
-.sliderSection{
-    height: 371px;
-}
-
-.slideDots{
-    margin: 14px 0 24px;
-}
-
-.allQuestionsTop{
-   display: none;
-}
-.allQuestionsBottom{
-    display: block;
-    margin: 50px 0;
- }
-.allQuestionsBottom{
-    display: block;
-    font: 16px;
-    font-family: var(--boldFont)
-}
-
-.FAQSection{
-    margin-top: 50px;
-    padding: 0;
-}
-.FAQHeader{
-    font-size: 20px !important;
-    padding: 0;
-    margin-bottom: 20px;
-}
-.questionsDiv{
-    height: auto;
-}
-
-.FAQ{
-    padding: 0;
-}
-.answers{
-    margin: 0;
-}
-.questionsDiv::before {
-    height: 0; /* Reset the height if needed */
-  }
-  .questions{
-    font-size: 16px;
-  }
-
+    /* footer grid container // enabling to manage footerContainer's items accordingly - using grid */
   .footerContainer{
     width: 980px;
     display: grid;
@@ -743,18 +713,18 @@ section div {
     margin: 64px 0 43px;
 }
 
-.contactBtnDiv, .logos{
-    margin: 35px 0;
-}
-.allRights{
-    margin: 10px 0 43px;
-}
-footer{
- padding: 0 20px
-}
+    .contactBtnDiv, .logos{
+        margin: 35px 0;
+        }
+    .allRights{
+        margin: 10px 0 43px;
+        }
+    footer{
+        padding: 0 20px
+        }
 }
 
-
+/* defining fonts */
 @font-face {
     font-display: block;
     font-family: wf_dd28b3957391427eb54de1c9e;
