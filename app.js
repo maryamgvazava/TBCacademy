@@ -6,6 +6,20 @@ let partnerImg = document.querySelectorAll('.partnerImg');
  let slide1partnersInfo  = document.querySelector('.slide1partnersInfo');
  let slide2partnersInfo  = document.querySelector('.slide2partnersInfo');
  var navbarL = document.querySelector('.navXl');
+ let navMd = document.querySelector('.navMd')
+let slideRightMenu = document.querySelector(".slideRightMenu")
+let togglTopmenuStick = document.querySelector(".togglTopmenuStick")
+let toggleMiddlemenuStick = document.querySelector(".toggleMiddlemenuStick")
+let toggleBottommenuStick = document.querySelector(".toggleBottommenuStick")
+let toggleMenuBtn = document.querySelector(".toggleMenuBtn")
+let togglMenu = document.querySelector(".togglMenu")
+
+
+
+
+
+
+
 
  let arr = [
   {
@@ -29,12 +43,16 @@ let partnerImg = document.querySelectorAll('.partnerImg');
       window.addEventListener('scroll', function () {
         if (window.scrollY > 0) {
           navbarL.style.opacity = "0.8";
-          navbarL.style.transition = "all .3s ease";
+          navbarL.style.transition = "all .5s ease";
+          navMd.style.transition = "all .5s ease";
+          navMd.style.opacity = "0.8";
         } else {
           navbarL.style.opacity = "1";
-          navbarL.style.transition = "all .3s ease";
+          navbarL.style.transition = "all .5s ease";
+          navMd.style.opacity = "1";
+          navMd.style.transition = "all .5s ease";
         }
-        
+
       });
 
 // static positions
@@ -122,13 +140,13 @@ let changeParameters = function(url, width, height) {
 }
 
 if (windowWidth < 425) {
-  arr[0].key0 = changeParameters(arr[0].key0, 219, 66);
-  arr[0].key1 = changeParameters(arr[0].key1, 220, 67);
+  arr[0].key0 = changeParameters(arr[0].key0, 200, 66);
+  arr[0].key1 = changeParameters(arr[0].key1, 200, 67);
   arr[0].key2 = changeParameters(arr[0].key2, 131, 45);
   arr[1].key3 = changeParameters(arr[1].key3, 180, 52);
-  arr[1].key4 = changeParameters(arr[1].key4, 250, 45);
+  arr[1].key4 = changeParameters(arr[1].key4, 200, 45);
   arr[1].key5 = changeParameters(arr[1].key5, 200, 66);
-  arr[2].key6 = changeParameters(arr[2].key6, 232, 65);
+  arr[2].key6 = changeParameters(arr[2].key6, 200, 65);
 }
 
 
@@ -139,4 +157,20 @@ questions.forEach(toggler => {
     let nextSiblingElement = toggler.nextElementSibling;
     nextSiblingElement.classList.toggle('showAnswer'); 
   });
+});
+
+
+
+slideRightMenu.addEventListener("click", function() {
+  togglMenu.classList.remove('show')
+  togglTopmenuStick.classList.remove("rotateStick");
+  toggleBottommenuStick.classList.remove("rotateStick");
+  toggleMiddlemenuStick.classList.remove("rotateCentralStick");
+});
+
+toggleMenuBtn.addEventListener("click", function() {
+  togglTopmenuStick.classList.add("rotateStick");
+  toggleBottommenuStick.classList.add("rotateStick");
+  toggleMiddlemenuStick.classList.add("rotateCentralStick");
+  togglMenu.classList.add('show')
 });
