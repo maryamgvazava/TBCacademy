@@ -1,11 +1,11 @@
-Firstly, a navigation bar is defined, comprising two sections: one for large screens "(<div class="navXl">) "
-  and another for medium and small screens (<div class="navMd">).
+Firstly, a navigation bar is defined, comprising two sections: one for large screens
+  and another for medium and small screens.
 
-The second part introduces a grid-structured layout within <section class="grid-container grid">. 
+The second part introduces a grid-structured layout within "grid-container". 
 This section encompasses all other elements in the HTML document, aiming to establish a consistent structure and enhance CSS styling flexibility.
 It achieves this by applying a background-color to every second grid item, adding fixed padding to all sections, and aligning the sections appropriately.
 
-The <section class="grid-container grid"> is divided into several key parts:
+The "grid-container" is divided into several key parts:
   • HeadlinesSection: This serves as the primary focal point of the page.
   
   • GeneralInfoSection: Here, comprehensive information about the TBC x USAID collaboration is presented.
