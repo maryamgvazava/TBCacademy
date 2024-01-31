@@ -1,4 +1,4 @@
-Firstly, a navigation bar (<nav>) is defined, comprising two sections: one for large screens (<div class="navXl">) 
+Firstly, a navigation bar is defined, comprising two sections: one for large screens "(<div class="navXl">) "
   and another for medium and small screens (<div class="navMd">).
 
 The second part introduces a grid-structured layout within <section class="grid-container grid">. 
